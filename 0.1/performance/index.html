@@ -421,6 +421,102 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#library-level-benchmark-go-api-vs-runtimes-2026-07-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Library-level benchmark (Go API vs runtimes) — 2026-07-03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library-level benchmark (Go API vs runtimes) — 2026-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plus" class="md-nav__link">
+    <span class="md-ellipsis">
+      plus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basename" class="md-nav__link">
+    <span class="md-ellipsis">
+      basename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirname" class="md-nav__link">
+    <span class="md-ellipsis">
+      dirname
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extname" class="md-nav__link">
+    <span class="md-ellipsis">
+      extname
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      cleanpath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative_path_from" class="md-nav__link">
+    <span class="md-ellipsis">
+      relative_path_from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    <span class="md-ellipsis">
+      split
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#each_filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      each_filename
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -499,6 +595,102 @@
       Result (best of 5, ms)
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-level-benchmark-go-api-vs-runtimes-2026-07-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Library-level benchmark (Go API vs runtimes) — 2026-07-03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library-level benchmark (Go API vs runtimes) — 2026-07-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plus" class="md-nav__link">
+    <span class="md-ellipsis">
+      plus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basename" class="md-nav__link">
+    <span class="md-ellipsis">
+      basename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirname" class="md-nav__link">
+    <span class="md-ellipsis">
+      dirname
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extname" class="md-nav__link">
+    <span class="md-ellipsis">
+      extname
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      cleanpath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative_path_from" class="md-nav__link">
+    <span class="md-ellipsis">
+      relative_path_from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split" class="md-nav__link">
+    <span class="md-ellipsis">
+      split
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#each_filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      each_filename
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -590,6 +782,394 @@ that complete in well under ~200 ms carry the most relative noise; treat
 their ratios as order-of-magnitude. These are <strong>real measured numbers</strong> from
 the 2026-06-30 run (Apple M-series; <code>ruby 4.0.5 +PRISM</code>, <code>jruby 10.1.0.0</code>,
 <code>truffleruby 34.0.1</code>) — nothing is fabricated or cherry-picked.</p>
+</div>
+<h2 id="library-level-benchmark-go-api-vs-runtimes-2026-07-03">Library-level benchmark (Go API vs runtimes) — 2026-07-03<a class="headerlink" href="#library-level-benchmark-go-api-vs-runtimes-2026-07-03" title="Permanent link">&para;</a></h2>
+<p>This section measures the <strong>pure-Go library directly, through its Go API</strong> — not
+the <code>rbgo</code> interpreter path recorded above. It isolates the library primitive
+from Ruby-interpreter dispatch, answering the parity question head-on: <em>is the
+pure-Go implementation as fast as the reference runtime's own <code>Pathname</code>?</em> The
+<strong>same workload, same inputs, same iteration counts</strong> run through the Go library
+and through each reference runtime's stdlib; the Go driver's output was checked
+<strong>byte-identical to MRI</strong> (the resulting path strings for every op) before any
+timing.</p>
+<ul>
+<li><strong>Host:</strong> Apple M4 Max (<code>Mac16,5</code>, arm64), macOS 26.5 — <strong>date 2026-07-03</strong>.
+  All runtimes ran natively on the host (no VM).</li>
+<li><strong>Runtimes:</strong> Go 1.26.4 · MRI <code>ruby 4.0.5 +PRISM</code> · MRI + YJIT · JRuby 10.1.0.0
+  (OpenJDK 25) · TruffleRuby 34.0.1 (GraalVM CE Native).</li>
+<li><strong>Ops:</strong> all <strong>pure-path (lexical)</strong> — no filesystem access, so the workload is
+  deterministic and reproducible: <code>Pathname#join</code>, <code>#+</code> (plus), <code>#basename</code>,
+  <code>#dirname</code>, <code>#extname</code>, <code>#cleanpath</code>, <code>#relative_path_from</code>, <code>#split</code>, and
+  <code>#each_filename</code>. Ruby's <code>Pathname</code> is pure-Ruby stdlib wrapping <code>File</code> path
+  methods, so parity is algorithmically reachable — and, being compiled, the
+  pure-Go library realizes it with room to spare. No op was unmeasurable: every
+  one of the nine has a direct, output-equal Go counterpart.</li>
+<li><strong>Method:</strong> each process runs 3 untimed warm-up passes, then 25 timed passes of
+  a fixed inner loop (1000 ops each), timed with a monotonic clock; the <strong>best</strong>
+  pass is reported as <strong>ns/op</strong> (lower is better). <code>vs MRI</code> &lt; 1.00× means
+  <em>faster than MRI</em>. Interpreter start-up is outside the timed region, so these
+  are operation costs, not <code>ruby file.rb</code> process costs. Harness + workload:
+  <a href="https://github.com/go-ruby-pathname/docs/tree/main/benchmarks"><code>benchmarks/</code></a>
+  (<code>go/</code> pins the published library by pseudo-version; <code>ruby/pathname.rb</code>);
+  reproduce with <code>bash benchmarks/run.sh</code>.</li>
+</ul>
+<h4 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">112.1</td>
+<td style="text-align: right;">0.01×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">11018.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">10161.0</td>
+<td style="text-align: right;">0.92×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">8448.9</td>
+<td style="text-align: right;">0.77×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">6322.3</td>
+<td style="text-align: right;">0.57×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="plus">plus<a class="headerlink" href="#plus" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">25.9</td>
+<td style="text-align: right;">0.01×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">2822.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">2688.0</td>
+<td style="text-align: right;">0.95×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">2011.2</td>
+<td style="text-align: right;">0.71×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">1524.3</td>
+<td style="text-align: right;">0.54×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="basename">basename<a class="headerlink" href="#basename" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">84.7</td>
+<td style="text-align: right;">0.25×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">336.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">277.0</td>
+<td style="text-align: right;">0.82×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">210.6</td>
+<td style="text-align: right;">0.63×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">442.7</td>
+<td style="text-align: right;">1.32×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dirname">dirname<a class="headerlink" href="#dirname" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">0.05×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">298.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">227.0</td>
+<td style="text-align: right;">0.76×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">265.7</td>
+<td style="text-align: right;">0.89×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">1973.8</td>
+<td style="text-align: right;">6.62×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="extname">extname<a class="headerlink" href="#extname" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">105.9</td>
+<td style="text-align: right;">0.52×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">203.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">163.0</td>
+<td style="text-align: right;">0.80×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">313.0</td>
+<td style="text-align: right;">1.54×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">493.3</td>
+<td style="text-align: right;">2.43×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="cleanpath">cleanpath<a class="headerlink" href="#cleanpath" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">250.0</td>
+<td style="text-align: right;">0.04×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">6044.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">6058.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">4995.4</td>
+<td style="text-align: right;">0.83×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">3353.3</td>
+<td style="text-align: right;">0.55×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="relative_path_from">relative_path_from<a class="headerlink" href="#relative_path_from" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">578.2</td>
+<td style="text-align: right;">0.05×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">12150.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">11913.0</td>
+<td style="text-align: right;">0.98×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">9125.1</td>
+<td style="text-align: right;">0.75×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">3648.9</td>
+<td style="text-align: right;">0.30×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="split">split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">132.5</td>
+<td style="text-align: right;">0.19×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">703.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">544.0</td>
+<td style="text-align: right;">0.77×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">389.7</td>
+<td style="text-align: right;">0.55×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">881.9</td>
+<td style="text-align: right;">1.25×</td>
+</tr>
+</tbody>
+</table>
+<h4 id="each_filename">each_filename<a class="headerlink" href="#each_filename" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th style="text-align: right;">ns/op</th>
+<th style="text-align: right;">vs MRI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>go-ruby (pure Go)</strong></td>
+<td style="text-align: right;">166.1</td>
+<td style="text-align: right;">0.06×</td>
+</tr>
+<tr>
+<td>MRI</td>
+<td style="text-align: right;">2885.0</td>
+<td style="text-align: right;">1.00×</td>
+</tr>
+<tr>
+<td>MRI + YJIT</td>
+<td style="text-align: right;">2711.0</td>
+<td style="text-align: right;">0.94×</td>
+</tr>
+<tr>
+<td>JRuby</td>
+<td style="text-align: right;">2173.6</td>
+<td style="text-align: right;">0.75×</td>
+</tr>
+<tr>
+<td>TruffleRuby</td>
+<td style="text-align: right;">4788.2</td>
+<td style="text-align: right;">1.66×</td>
+</tr>
+</tbody>
+</table>
+<p>The pure-Go library is <strong>faster than MRI on every one of the nine ops</strong>. The
+widest margins are on the allocation-heavy path builders — <code>join</code> and <code>+</code>
+(~100× and ~110× faster than MRI, since MRI's <code>Pathname#join</code> chains <code>#+</code>, each
+allocating a fresh <code>Pathname</code> and string) and <code>cleanpath</code> /
+<code>relative_path_from</code> (~24× and ~21×, which split, normalise and re-join). The
+narrowest are the already-tiny single-scan ops <code>extname</code> (~1.9×) and <code>basename</code>
+(~4×), where MRI has little Ruby overhead to shed. MRI's <code>Pathname</code> is pure-Ruby
+stdlib, so each op pays interpreter dispatch the compiled Go code does not.
+Parity is not just reached, it is beaten across the board. Outputs were checked
+byte-identical to MRI before timing, so the speed is not bought with divergent
+behavior.</p>
+<div class="admonition note">
+<p class="admonition-title">Cold-JIT caveat</p>
+<p>JRuby (JVM) and TruffleRuby (GraalVM) get only the harness's 3 warm-up
+passes, so they are effectively <strong>cold</strong> — TruffleRuby's <code>dirname</code> row
+(1973.8 ns, 6.62×) and <code>extname</code> row (2.43×) are dominated by Graal
+compilation kicking in on just-touched paths, not steady-state throughput;
+on the heavier <code>relative_path_from</code>/<code>cleanpath</code>/<code>join</code> ops, where it has more
+work to amortise over, TruffleRuby is already the fastest Ruby column. JRuby
+is closer to warm but still not fully JITed. Read the JVM/Graal columns as
+cold single-shot costs, the same footing as the top-of-page table. These are
+<strong>real measured numbers</strong> from the 2026-07-03 run (Apple M4 Max, arm64;
+<code>ruby 4.0.5 +PRISM</code>, <code>jruby 10.1.0.0</code>, <code>truffleruby 34.0.1</code>) — nothing is
+fabricated or cherry-picked.</p>
 </div>
 
 
