@@ -1,5 +1,5 @@
 module bench
 
-go 1.26.4
+go 1.27.1
 
-require github.com/go-ruby-pathname/pathname v0.0.0-20260916100446-0824484b665f
+require github.com/go-ruby-pathname/pathname v0.0.0-20261007112952-366942aae875
